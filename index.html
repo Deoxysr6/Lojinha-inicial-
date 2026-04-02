@@ -9,12 +9,14 @@
 
 <header class="header">
   <h1 class="logo">Computadores Brasil</h1>
+
   <div class="header-direita">
-    <div class="login" id="loginBox">
+    <div class="login">
       <input type="text" id="usuario" placeholder="Usuário">
       <input type="password" id="senha" placeholder="Senha">
       <button onclick="login()">Entrar</button>
     </div>
+
     <div class="carrinho-header" onclick="toggleCarrinho()">
       🛒 <span id="contadorCarrinho">0</span>
     </div>
@@ -23,33 +25,23 @@
 
 <div class="top-bar">
   🔍 <input type="text" id="busca" placeholder="Buscar produto...">
+
   📦 
   <select id="filtro">
     <option value="">Selecione uma categoria</option>
     <option value="Hardware">Hardware</option>
-    <option value="Cadeiras">Cadeiras Gamers</option>
+    <option value="Cadeiras">Cadeiras</option>
     <option value="Periféricos">Periféricos</option>
-    <option value="Computadores">PC Gamers</option>
+    <option value="Computadores">Computadores</option>
   </select>
 </div>
 
-<div class="container">
+<main class="container">
   <div class="produtos" id="listaProdutos"></div>
+</main>
 
-  <div class="pagamento" id="pagamentoBox">
-    <h2>💳 Pagamento</h2>
-    <select id="metodo">
-      <option>Pix</option>
-      <option>Cartão</option>
-    </select>
-    <br><br>
-    <button onclick="pagar()">Pagar</button>
-    <p id="statusPagamento"></p>
-  </div>
-</div>
-
-<!-- Carrinho lateral -->
 <div class="carrinho-box" id="carrinhoBox">
+
   <div class="carrinho-header-box">
     <h3>🛒 Seu Carrinho</h3>
     <span class="fechar" onclick="toggleCarrinho()">✖</span>
@@ -60,19 +52,20 @@
   <div class="carrinho-footer">
     <p id="totalCarrinho">Total: R$ 0,00</p>
 
-    <!-- Pagamento dentro do carrinho -->
     <div class="pagamento-carrinho" id="pagamentoBox">
       <h4>💳 Pagamento</h4>
       <select id="metodo">
         <option>Pix</option>
         <option>Cartão</option>
       </select>
-      <button onclick="pagar()" id="btnPagar">Pagar</button>
-      <p id="statusPagamento"></p>
+      <button onclick="pagar()">Pagar</button>
     </div>
 
-    <button onclick="abrirPagamento()" id="finalizarCompra" class="btnFinalizar">Finalizar Compra</button>
+    <button onclick="abrirPagamento()" class="btnFinalizar">
+      Finalizar Compra
+    </button>
   </div>
+
 </div>
 
 <script src="script.js"></script>
