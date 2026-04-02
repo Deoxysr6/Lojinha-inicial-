@@ -36,8 +36,6 @@
 <div class="container">
   <div class="produtos" id="listaProdutos"></div>
 
-  <button onclick="abrirPagamento()" id="finalizarCompra">Finalizar Compra</button>
-
   <div class="pagamento" id="pagamentoBox">
     <h2>💳 Pagamento</h2>
     <select id="metodo">
@@ -52,8 +50,29 @@
 
 <!-- Carrinho lateral -->
 <div class="carrinho-box" id="carrinhoBox">
-  <h3>🛒 Seu Carrinho</h3>
+  <div class="carrinho-header-box">
+    <h3>🛒 Seu Carrinho</h3>
+    <span class="fechar" onclick="toggleCarrinho()">✖</span>
+  </div>
+
   <ul id="listaCarrinho"></ul>
+
+  <div class="carrinho-footer">
+    <p id="totalCarrinho">Total: R$ 0,00</p>
+
+    <!-- Pagamento dentro do carrinho -->
+    <div class="pagamento-carrinho" id="pagamentoBox">
+      <h4>💳 Pagamento</h4>
+      <select id="metodo">
+        <option>Pix</option>
+        <option>Cartão</option>
+      </select>
+      <button onclick="pagar()" id="btnPagar">Pagar</button>
+      <p id="statusPagamento"></p>
+    </div>
+
+    <button onclick="abrirPagamento()" id="finalizarCompra" class="btnFinalizar">Finalizar Compra</button>
+  </div>
 </div>
 
 <script src="script.js"></script>

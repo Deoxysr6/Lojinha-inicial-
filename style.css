@@ -123,36 +123,120 @@ button:hover { background: #1d4ed8; }
   display: none;
 }
 
-/* CARRINHO LATERAL */
+/* CARRINHO LATERAL PROFISSIONAL */
 .carrinho-box {
   position: fixed;
-  top: 70px;
+  top: 0;
   right: 0;
-  width: 250px;
-  background: white;
+  width: 400px;
+  max-width: 90%;
   height: 100%;
-  padding: 15px;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  background: #fff;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.3);
   transform: translateX(100%);
   transition: 0.3s;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-left: 1px solid #ccc;
 }
+
 .carrinho-box.ativo { transform: translateX(0); }
-.carrinho-box ul { list-style: none; padding: 0; }
+
+.carrinho-header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #2563eb;
+  color: white;
+  font-size: 18px;
+}
+
+.carrinho-header-box .fechar {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.carrinho-box ul {
+  list-style: none;
+  padding: 20px;
+  flex-grow: 1;
+}
+
 .carrinho-box li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-}
-.carrinho-box li .remover {
-  color: red;
-  cursor: pointer;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .header { flex-direction: column; gap: 10px; }
-  .header-direita { flex-direction: column; }
-  .login input { width: 100%; }
-  .top-bar { flex-direction: column; gap: 10px; }
+.carrinho-box li button {
+  padding: 3px 8px;
+  font-size: 14px;
+  margin: 0 3px;
+  border-radius: 4px;
+}
+
+/* Footer do carrinho */
+.carrinho-footer {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Total */
+.carrinho-footer p {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Botão Finalizar Compra */
+.btnFinalizar {
+  background: #10b981; /* verde bonito */
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btnFinalizar:hover {
+  background: #059669;
+}
+
+/* Pagamento dentro do carrinho */
+.pagamento-carrinho {
+  display: none; /* inicia escondido */
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.pagamento-carrinho h4 {
+  margin-bottom: 5px;
+}
+.pagamento-carrinho select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+#btnPagar {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#btnPagar:hover {
+  background: #1d4ed8;
 }
