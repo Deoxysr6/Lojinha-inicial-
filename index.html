@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Computadores Brasil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">Computadores Brasil</h1>
+  <div class="header-direita">
+    <div class="login" id="loginBox">
+      <input type="text" id="usuario" placeholder="Usuário">
+      <input type="password" id="senha" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    </div>
+    <div class="carrinho-header" onclick="toggleCarrinho()">
+      🛒 <span id="contadorCarrinho">0</span>
+    </div>
+  </div>
+</header>
+
+<div class="top-bar">
+  🔍 <input type="text" id="busca" placeholder="Buscar produto...">
+  📦 
+  <select id="filtro">
+    <option value="">Selecione uma categoria</option>
+    <option value="Hardware">Hardware</option>
+    <option value="Cadeiras">Cadeiras Gamers</option>
+    <option value="Periféricos">Periféricos</option>
+    <option value="Computadores">PC Gamers</option>
+  </select>
+</div>
+
+<div class="container">
+  <div class="produtos" id="listaProdutos"></div>
+
+  <button onclick="abrirPagamento()" id="finalizarCompra">Finalizar Compra</button>
+
+  <div class="pagamento" id="pagamentoBox">
+    <h2>💳 Pagamento</h2>
+    <select id="metodo">
+      <option>Pix</option>
+      <option>Cartão</option>
+    </select>
+    <br><br>
+    <button onclick="pagar()">Pagar</button>
+    <p id="statusPagamento"></p>
+  </div>
+</div>
+
+<!-- Carrinho lateral -->
+<div class="carrinho-box" id="carrinhoBox">
+  <h3>🛒 Seu Carrinho</h3>
+  <ul id="listaCarrinho"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
